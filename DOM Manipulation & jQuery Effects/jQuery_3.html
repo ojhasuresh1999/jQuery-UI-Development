@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red {
+            color: red;
+            text-decoration: none;
+            border: 5px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <a href="http://google.com">Google</a>
+        <p id="myId">This is aparagraph..</p>
+        <div id="myDiv"></div>
+        <img src="https://media.istockphoto.com/id/1164386039/photo/howrah-bridge-on-river-ganges-at-kolkata-at-twilight-with-moody-sky.jpg?s=612x612&w=0&k=20&c=CHrNWdInFSDyERdvgd0f8935hZcBQU6lbYCE4LlXqUY="
+            id="myImg">
+        <button id="btn1">Click Me</button>
+    </div>
+
+    <!----> <!----> <!----> <!----> <!---->
+    <a href="https://google.com" target="_blank" class="after">Google</a>
+
+    <button id="btn2">Fix My Link</button>
+
+
+
+
+    <script src="jquery-3.6.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let link = $('a').attr('href');
+            $('#myDiv').text(link);
+            // Set attribute
+            $('#btn1').click(function () {
+                $('#myImg').attr('src', 'https://tinypng.com/images/social/website.jpg');
+            });
+
+
+            // <!----> <!----> <!----> <!----> <!---->
+            $('#btn2').click(function () {
+                if ($('a').hasClass('after') == true) {
+                    $('.after').removeClass('after').addClass('red');
+                };
+            });
+        })
+    </script>
+</body>
+
+</html>

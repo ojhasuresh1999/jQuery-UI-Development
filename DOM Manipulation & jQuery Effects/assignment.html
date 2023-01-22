@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tooltip {
+            /* display: none; */
+            position: absolute;
+            background-color: #555;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form>
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" name="first-name"><br>
+        <label class="last-name" for="last-name">Last Name:</label>
+        <input type="text" class="last-name" name="last-name"><br>
+    </form>
+
+
+    <div id="panel-container">
+        <div id="panel">
+            <p>Content inside the panel</p>
+        </div>
+        <button id="slide-button">Slide Panel</button>
+    </div>
+    <br><br><br>
+
+
+    <button class="tooltip-button">Hover me</button>
+    <div class="tooltip">This is a tooltip</div>
+
+
+
+    <script src="jquery-3.6.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('form').append(' <label for="address">Address:</label> <input type = "text" id = "address" name = "address" > <br> <br>');
+            $('form').append(' <label for="email">Email:</label> <input type = "text" id = "email" name = "email" > <br><br>');
+            $('form').append(' <label for="dob">DOB:</label> <input type = "text" id = "dob" name = "dob" > <br><br>');
+
+
+            $('.last-name').remove();
+
+
+            $('#dob').attr('type', 'date');
+            $('#email').attr('type', 'email');
+
+
+            $('#slide-button').click(function () {
+                $('#panel').slideToggle(500, "linear");
+            });
+
+
+
+            
+                // $(".tooltip-button").hover(function () {
+                //     $(".tooltip").fadeIn();
+                // }, function () {
+                //     $(".tooltip").fadeOut();
+                // });
+            
+
+
+            $(".tooltip-button").hover(function () {
+                $(".tooltip").animate({
+                    'width': '500px',
+                    'top': '0',
+                    'opacity': '1'
+                }, 500, 'swing');
+            }, function () {
+                $(".tooltip").animate({
+                    'width': '250px',
+                    'top': '-30',
+                    'opacity': '0'
+                }, 500, 'swing');
+            });
+
+
+
+        });
+    </script>
+
+</body>
+
+</html>

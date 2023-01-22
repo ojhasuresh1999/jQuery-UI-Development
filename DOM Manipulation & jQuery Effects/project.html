@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Project</title>
+    <style>
+        body {
+            background-color: cyan;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #text {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to my project</h1>
+    <p id="text">This is some text</p>
+    <button id="button">Click me</button>
+
+    
+    <script>
+        let button = document.getElementById("button");
+        let text = document.getElementById("text");
+
+        button.addEventListener("click", function () {
+            text.innerHTML = "You clicked the button!";
+        });
+
+    </script>
+</body>
+
+</html>

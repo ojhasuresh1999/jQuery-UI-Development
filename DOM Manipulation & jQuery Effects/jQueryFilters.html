@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .myDiv {
+            width: 250px;
+            height: 250px;
+            background-color: turquoise;
+        }
+
+        .color-box {
+            display: inline-block;
+            width: 250px;
+            height: 250px;
+            border: 2px solid black;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .after {
+            background-color: aqua;
+        }
+
+        .before {
+            background-color: red;
+        }
+
+        .append {
+            background-color: gold;
+        }
+
+        .prepend {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <div class="myDiv"></div>
+    <p class=".log"> </p> -->
+
+
+    <!----><!----><!----><!----><!----><!---->
+
+    <div id="container">
+        <div class="color-box after"> After </div>
+        <div class="color-box before"> Before </div>
+        <div class="color-box append"> Append </div>
+        <div class="color-box prepend"> Prepend </div>
+    </div>
+
+    <button id="btn1">Hide</button>
+    <button id="btn2">Show</button>
+    <button id="toggle">Toggle</button>
+    <button id="animate">Animate</button>
+
+
+    <script src="jquery-3.6.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.myDiv').hide(8000);
+            $('.myDiv').show('slow', function () {
+                $('.log').text('Transition Complete');
+            });
+
+
+
+            // <!----><!----><!----><!----><!----><!---->
+            $('#btn1').click(function () {
+                $('.color-box').hide(2000);
+            })
+            $('#btn2').click(function () {
+                $('.color-box').show(2000);
+            });
+            $('#toggle').click(function () {
+                $('.color-box').toggle(2000);
+            });
+
+
+
+            // <!----><!----><!----><!----><!----><!---->
+            $('#animate').click(function () {
+                $('.color-box').animate({
+                    width: '300px',
+                    height: '50px',
+                    fontSize:'2em',
+                    opacity: 0.5,
+                    margin : '20px'
+                }, 200);
+            });
+
+
+
+        })
+    </script>
+
+</body>
+
+</html>

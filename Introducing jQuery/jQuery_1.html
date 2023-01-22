@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <style>
+        #readyDemo {
+            font-size: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="readyDemo"></div>
+
+    <h1>List 1</h1>
+    <ul id="item-list">
+        <li id="first-li">
+            <a href="https://google.com"> Outside </a>
+            <div><a href="#" id="inside-a-div">Inside</a></div>
+        </li>
+        <li>Milk</li>
+        <li>Tea</li>
+    </ul>
+
+
+    <a href="https://google.com" target="_blank"> Google Blank</a>
+    <a href="https://google.com" target="_self"> Google Self</a>
+
+    <script src="jquery-3.6.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#readyDemo').text('Webpage is ready!!!').css('color', 'crimson').css('font-weight', '700');
+
+            $("a[target='_blank']").css('color','cyan');
+
+            $('#item-list > li').css('color','red');
+        });
+    </script>
+</body>
+
+</html>

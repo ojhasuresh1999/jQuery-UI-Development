@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling</title>
+    <style>
+        #box {
+            width: 250px;
+            height: 250px;
+            background-color: crimson;
+        }
+
+        #message {
+            color: white;
+            font-size: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="border: 2px solid crimson; padding: 20px;">Click me</h1>
+
+
+
+    <div id="box">
+        <span id="message"> </span>
+    </div>
+
+
+    <script src="jquery-3.6.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('h1').bind("mouseenter", function () {
+                console.log('Entering the heading', $(this).text());
+            });
+            $('h1').bind("mouseleave", function () {
+                console.log('Leaving the heading');
+                $(this).unbind('mouseenter')
+            });
+            // $('h1').unbind();
+
+
+
+            $('#box').on({
+                mouseenter: function () {
+                    $('#message').text('You enter in the div')
+                },
+                mouseleave: function () {
+                    $('#message').text('You leave the div')
+                },
+                click: function(){
+                    alert('You clicked the div')
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
